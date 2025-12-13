@@ -1,0 +1,6 @@
+We are looking for a Data Analyst with experience in Python, SQL, and Machine Learning.
+Responsibilities include analyzing data, building reports, and supporting data-driven decisions.
+Qualifications:
+- Proficient in Python and SQL
+- Knowledge of Machine Learning algorithms
+- Strong analytical skills

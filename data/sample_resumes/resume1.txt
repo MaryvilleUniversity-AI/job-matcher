@@ -1,0 +1,8 @@
+John Doe
+Email: john.doe@example.com
+Skills: Python, SQL, Machine Learning, Data Analysis
+Experience:
+- Data Analyst at XYZ Corp (2022-2024)
+- Software Intern at ABC Inc (2021)
+Education:
+- B.S. in Computer Science, University of Somewhere
