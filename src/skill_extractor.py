@@ -2,12 +2,54 @@
 Highlight matching and missing skills.
 """
 
+import re
+import string
+
+def clean_text(text):
+    """
+    Converts text to lowercase and removes punctuation.
+    """
+    return text.lower().translate(str.maketrans('', '', string.punctuation))
+
+# Extract skills from resume and job description
 def extract_skills(resume_text, job_text, skills):
-    resume_words = set(word.lower().strip(".,") for word in resume_text.split())
-    job_words = set(word.lower().strip(".,") for word in job_text.split())
-    skills_set = set(skill.lower() for skill in skills)
+    """
+    Compare resume text against a list of skills
 
-    matched = skills_set & resume_words & job_words
-    missing = skills_set - resume_words
+    Args:
+        resume_text (str): The text of the resume.
+        job_text (str): The text of the job description.
+        skills (list): A list of skills to check against.
+    
+    Returns:
+        matched (list): Skills found in the resume.
+        missing (list): Skills not found in the resume.
+    """
+    resume_clean = clean_text(resume_text)
 
-    return list(matched), list(missing)
+    matched = [skill for skill in skills if skill.lower() in resume_clean]
+    missing = [skill for skill in skills if skill.lower() not in resume_clean]
+
+    return matched, missing
+
+# Extract required skills from job description
+def extract_skills_from_job(job_text, skills):
+    """
+    Extracts skills from the job description based on a predefined list.
+
+    Args:
+        job_text (str): The text of the job description.
+        skills (list): A list of skills to check against.
+
+    Returns:
+        skills_found (list): Skills found in the job description.
+    """
+    job_clean = clean_text(job_text)
+
+    skills_found = []
+    for skill in skills:
+        pattern = r'\b' + re.escape(skill.lower()) + r'\b'
+        if re.search(pattern, job_clean):
+            skills_found.append(skill)
+    
+    return skills_found
