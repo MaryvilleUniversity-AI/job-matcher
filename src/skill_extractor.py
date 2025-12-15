@@ -2,6 +2,7 @@
 Highlight matching and missing skills.
 """
 
+import re
 import string
 
 def clean_text(text):
@@ -44,5 +45,11 @@ def extract_skills_from_job(job_text, skills):
         skills_found (list): Skills found in the job description.
     """
     job_clean = clean_text(job_text)
-    skills_found = [skill for skill in skills if skill.lower() in job_clean]
+
+    skills_found = []
+    for skill in skills:
+        pattern = r'\b' + re.escape(skill.lower()) + r'\b'
+        if re.search(pattern, job_clean):
+            skills_found.append(skill)
+    
     return skills_found

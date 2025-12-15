@@ -30,16 +30,25 @@ if resume_file and job_file:
     # Extract skills dynamically from the job description
     job_skills = extract_skills_from_job(job_text, common_skills)
 
-    # DEBUG: Show skills needed extracted from job description
-    st.write("Skills extracted from job description:", job_skills)
-
     # Compare resume vs job skills
     matched, missing = extract_skills(resume_text, job_text, job_skills)
 
-    # Display Match score with progress bar
-    st.markdown("### Match Score")
+    # Skill coverage percentage
+    skill_match_pct = (
+        len(matched) / (len(matched) + len(missing)) * 100 
+        if (len(matched) + len(missing)) > 0 
+        else 0
+    )
+
+    # Display Text Similarity score with progress bar
+    st.markdown("### Overall Text Similarity")
     st.progress(int(score))
-    st.write(f"**Match Score:** {score:.2f}%")
+    st.write(f"**Text Similarity Score:** {score:.2f}%")
+
+    # Display skill coverage match
+    st.markdown("### Skill Coverage")
+    st.progress(int(skill_match_pct))
+    st.write(f"**Skill Coverage:** {skill_match_pct:.2f}%")
 
     # Display matched and missing skills side by side
     col1, col2 = st.columns(2)
