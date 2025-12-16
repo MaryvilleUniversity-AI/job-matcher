@@ -1,0 +1,22 @@
+John Doe
+Software Engineering Intern
+
+Skills
+Python, JavaScript, SQL, Git, Linux, Data Analysis, Pandas, NumPy
+
+Experience
+Software Engineering Intern
+Tech Solutions Inc. | May 2023 – August 2023
+- Developed internal tools using Python and JavaScript
+- Worked with SQL databases to store and retrieve application data
+- Analyzed datasets using Pandas and NumPy
+- Collaborated with team members using Git and GitHub
+
+Projects
+Data Dashboard
+- Built a data visualization dashboard using Python and Tableau
+- Cleaned and analyzed data to generate business insights
+
+Education
+B.S. in Computer Science
+University of Somewhere | Expected 2025
