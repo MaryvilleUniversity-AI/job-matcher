@@ -1,0 +1,16 @@
+Data Analyst
+
+Responsibilities:
+- Perform data analysis using Python, SQL, and Excel to support business operations.
+- Build dashboards and visualizations using Tableau and Power BI.
+- Collaborate with different departments to implement data-driven solutions.
+- Apply machine learning models to enhance predictive analytics.
+- Clean, transform, and analyze datasets using pandas and numpy.
+- Prepare reports and presentations to communicate findings effectively to stakeholders.
+
+Qualifications:
+- Strong proficiency in Python, SQL, and Excel.
+- Experience with Tableau and Power BI for reporting and visualization.
+- Knowledge of pandas, numpy, and machine learning techniques.
+- Excellent data analysis, data visualization, and communication skills.
+- Bachelor’s degree in Computer Science, Statistics, or related field.
