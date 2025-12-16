@@ -1,0 +1,15 @@
+Software Engineer Intern
+
+We are seeking a Software Engineer Intern to join our development team.
+
+Responsibilities
+- Write clean, maintainable code using Python and JavaScript
+- Work with SQL databases and cloud platforms such as AWS
+- Perform data analysis and data visualization
+- Collaborate with cross-functional teams using Git
+
+Qualifications
+- Experience with Python, SQL, and JavaScript
+- Familiarity with data analysis tools such as Pandas and NumPy
+- Understanding of Linux environments
+- Strong problem-solving and communication skills
