@@ -117,3 +117,4 @@ resume-matcher/
 - Add charts for visual comparison of skills coverage.
 
 ## License
+This project is open-source under the MIT License.
