@@ -21,7 +21,7 @@ skills. Built with **Python** and **Streamlit**, it leverages natural language p
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/resume-matcher.git
+git clone https://github.com/MaryvilleUniversity-AI/job-matcher.git
 cd resume-matcher
 ```
 
