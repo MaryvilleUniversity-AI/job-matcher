@@ -1,0 +1,40 @@
+Jordan Patel
+Email: jordan.patel@email.com | Phone: (314) 555-0198
+LinkedIn: linkedin.com/in/jordanpatel-data
+Location: St. Louis, MO
+
+Professional Summary:
+Senior Data Analyst with 5+ years of experience delivering analytics solutions for product and operations teams. Skilled in Python, SQL, machine learning, and dashboard development. Strong track record of turning large datasets into practical recommendations that increase retention, improve process efficiency, and support executive decision-making.
+
+Core Skills:
+- Python (pandas, numpy, scikit-learn)
+- SQL (window functions, CTEs, query optimization)
+- Data Analysis and Statistical Testing
+- Dashboarding and Data Visualization (Tableau, Power BI)
+- KPI Development and Product Analytics
+- Experiment Design and A/B Testing
+- Stakeholder Communication and Cross-Functional Collaboration
+
+Professional Experience:
+Senior Data Analyst | Meridian Commerce | 2022-Present
+- Built a customer health scoring model in Python that improved churn identification recall by 18%.
+- Partnered with Product and Marketing leaders to define lifecycle KPIs, improving weekly decision cadence.
+- Designed and analyzed 25+ A/B tests; delivered recommendations that increased onboarding conversion by 9%.
+- Created executive dashboards in Tableau, reducing manual reporting time by 12 hours per week.
+- Mentored two junior analysts on SQL standards and experimentation methodology.
+
+Data Analyst | North Ridge Solutions | 2020-2022
+- Developed SQL reporting layers for revenue and retention, improving metric consistency across teams.
+- Automated monthly forecasting workflows using Python scripts, cutting reporting cycle time by 35%.
+- Collaborated with engineering to resolve data quality gaps and improve source documentation.
+
+Selected Projects:
+- Demand Forecasting Pilot: Trained regression models to forecast weekly order volume with 11% lower MAPE.
+- Customer Segmentation Study: Clustered user behavior patterns to inform targeted campaign strategies.
+
+Education:
+B.S. in Computer Science, University of Missouri
+
+Certifications:
+- Google Data Analytics Certificate
+- Tableau Desktop Specialist
