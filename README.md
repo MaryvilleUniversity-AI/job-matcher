@@ -63,6 +63,72 @@ streamlit run src/app.py
 - **Matched Skills** ✅
 - **Missing Skills** ❌
 
+## Run With Docker (One Command)
+
+If you have Docker Desktop installed, you can run the app with one command:
+
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:8501
+```
+
+To stop the app:
+
+```bash
+docker compose down
+```
+
+### Docker Troubleshooting
+
+- If port 8501 is already in use, update [docker-compose.yml](docker-compose.yml) to map a different host port (for example, `8502:8501`) and open `http://localhost:8502`.
+- If you suspect stale containers/images, run:
+
+```bash
+docker compose down
+docker compose build --no-cache
+docker compose up
+```
+
+## Docker (Manual Build and Run)
+
+If you prefer not to use Docker Compose, you can build and run the container directly.
+
+1. Build the image:
+
+```bash
+docker build --no-cache -t job-matcher .
+```
+
+2. Run the container:
+
+```bash
+docker run --rm -p 8501:8501 --name job-matcher-app job-matcher
+```
+
+3. Open the app:
+
+```text
+http://localhost:8501
+```
+
+4. Stop the container:
+
+```bash
+docker stop job-matcher-app
+```
+
+5. (Optional) Remove the local image and rebuild cleanly:
+
+```bash
+docker rmi job-matcher
+docker build --no-cache -t job-matcher .
+```
+
 ## Project Structure
 
 ```powershell
@@ -80,6 +146,8 @@ resume-matcher/
 │   ├── sample_resumes/       # Example resume files
 │   └── job_descriptions/     # Example job description files
 │
+├── Dockerfile                # Container build instructions
+├── docker-compose.yml        # One-command local container run
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
 ```
@@ -117,4 +185,5 @@ resume-matcher/
 - Add charts for visual comparison of skills coverage.
 
 ## License
+
 This project is open-source under the MIT License.

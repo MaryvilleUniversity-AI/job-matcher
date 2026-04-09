@@ -2,20 +2,18 @@
 Clean text so the computer can understand it.
 """
 
-import nltk
+import re
 import string
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
-nltk.download('punkt')
-nltk.download('stopwords')
+STOPWORDS = set(ENGLISH_STOP_WORDS)
 
 def preprocess(text):
     text = text.lower()
-    tokens = word_tokenize(text)
+    tokens = re.findall(r"\b\w+\b", text)
     tokens = [
         word for word in tokens
-        if word not in stopwords.words('english')
+        if word not in STOPWORDS
         and word not in string.punctuation
     ]
     return " ".join(tokens)
