@@ -1,0 +1,14 @@
+FROM mcr.microsoft.com/devcontainers/python:1-3.11-bullseye
+
+WORKDIR /app
+
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY src ./src
+COPY data ./data
+COPY README.md ./README.md
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "src/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
