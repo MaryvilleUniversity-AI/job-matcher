@@ -1,0 +1,46 @@
+Avery Chen
+Email: avery.chen@email.com | Phone: (314) 555-0176
+LinkedIn: linkedin.com/in/averychen-analytics
+Location: St. Louis, MO
+
+Professional Summary:
+Senior Data Analyst with 6 years of experience delivering product and growth analytics in SaaS and e-commerce environments. Skilled in SQL, Python, machine learning, and statistical experimentation. Known for turning complex behavioral data into practical recommendations that improve conversion, retention, and forecasting accuracy.
+
+Core Skills:
+- SQL (window functions, CTEs, optimization, data quality validation)
+- Python (pandas, numpy, scikit-learn, matplotlib)
+- Product and Growth Analytics
+- A/B Testing and Experimentation Design
+- Statistical Analysis and KPI Framework Development
+- Dashboard Development (Tableau, Power BI)
+- Stakeholder Communication and Executive Reporting
+- Cross-Functional Collaboration (Product, Marketing, Revenue Ops)
+
+Professional Experience:
+Senior Data Analyst | VertexFlow Software | 2022-Present
+- Led redesign of the growth KPI framework across acquisition and retention, reducing metric ambiguity and improving quarterly planning alignment.
+- Built customer lifecycle dashboards in Tableau used weekly by Product and Executive teams, cutting ad hoc reporting requests by 40%.
+- Designed and analyzed 30+ product and onboarding A/B tests, increasing trial-to-paid conversion by 11% over 12 months.
+- Developed churn propensity models in Python that improved high-risk account identification recall by 21%.
+- Partnered with engineering to define source-of-truth data models, reducing reporting defects by 35%.
+- Mentored two analysts on experiment design, SQL standards, and communication of uncertainty in results.
+
+Data Analyst | BlueArc Commerce | 2019-2022
+- Built automated SQL reporting pipelines for marketing and revenue leadership, reducing monthly reporting cycle time by 50%.
+- Conducted cohort and funnel analyses that identified onboarding drop-off drivers and informed UX changes.
+- Supported forecasting initiatives by developing Python-based demand models with a 13% improvement in accuracy.
+
+Selected Projects:
+- Retention Signal Model: Combined product usage and support activity features to improve early churn detection.
+- Expansion Opportunity Scoring: Built account-level scoring logic that increased upsell campaign response by 8%.
+- Experiment Insights Library: Standardized test readouts and methodology notes to improve repeatability.
+
+Education:
+B.S. in Computer Science, University of Missouri
+
+Certifications:
+- Google Advanced Data Analytics Certificate
+- Tableau Desktop Specialist
+
+Tools and Platforms:
+SQL Server, PostgreSQL, Snowflake, Git, Jupyter, Power BI, Tableau, AWS

@@ -8,7 +8,7 @@ skills. Built with **Python** and **Streamlit**, it leverages natural language p
 
 ## Features
 
-- **File Uploads**: Upload resume and job description as `.txt` files.
+- **File Uploads**: Upload resume and job description as `.txt`, `.pdf`, or `.docx` files.
 - **Text Similarity**: Calculates overall text similarity between resume and job description.
 - **Matched & Missing Skills**: Displays matched and missing skills clearly with visual indicators.
 - **Skill Coverage Score**: Shows the percentage of required skills covered by the resume.
@@ -44,8 +44,9 @@ pip install -r requirements.txt
 **Dependencies include**:
 
 - `streamlit`
-- `nltk`
 - `scikit-learn`
+- `pypdf`
+- `python-docx`
 
 ## Usage
 
@@ -55,7 +56,7 @@ pip install -r requirements.txt
 streamlit run src/app.py
 ```
 
-2. Upload your **resume** and **job description** as `.txt` files.
+2. Upload your **resume** and **job description** as `.txt`, `.pdf`, or `.docx` files.
 3. View the results:
 
 - **Overall Text Similarity**
@@ -178,7 +179,6 @@ resume-matcher/
 
 ## Future Improvements
 
-- Add support for PDF and DOCX resume uploads.
 - Use NLP models for semantic skill matching.
 - Highlight missing skills in suggested resume improvements.
 - Weight skills differently based on importance in job description.
