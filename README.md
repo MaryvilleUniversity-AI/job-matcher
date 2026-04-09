@@ -69,7 +69,7 @@ streamlit run src/app.py
 If you have Docker Desktop installed, you can run the app with one command:
 
 ```bash
-docker compose up --build
+docker run --rm -p 8501:8501 danldevs/job-matcher:latest
 ```
 
 Then open:
@@ -86,29 +86,28 @@ docker compose down
 
 ### Docker Troubleshooting
 
-- If port 8501 is already in use, update [docker-compose.yml](docker-compose.yml) to map a different host port (for example, `8502:8501`) and open `http://localhost:8502`.
-- If you suspect stale containers/images, run:
+- If port 8501 is already in use, run with a different host port (for example, `-p 8502:8501`) and open `http://localhost:8502`.
+- If you suspect you have an old local image, pull the latest image and run again:
 
 ```bash
-docker compose down
-docker compose build --no-cache
-docker compose up
+docker pull danldevs/job-matcher:latest
+docker run --rm -p 8501:8501 danldevs/job-matcher:latest
 ```
 
 ## Docker (Manual Build and Run)
 
-If you prefer not to use Docker Compose, you can build and run the container directly.
+If you want to run from Docker Hub explicitly, use the following steps.
 
-1. Build the image:
+1. Pull the image:
 
 ```bash
-docker build --no-cache -t job-matcher .
+docker pull danldevs/job-matcher:latest
 ```
 
 2. Run the container:
 
 ```bash
-docker run --rm -p 8501:8501 --name job-matcher-app job-matcher
+docker run --rm -p 8501:8501 --name job-matcher-app danldevs/job-matcher:latest
 ```
 
 3. Open the app:
@@ -123,11 +122,11 @@ http://localhost:8501
 docker stop job-matcher-app
 ```
 
-5. (Optional) Remove the local image and rebuild cleanly:
+5. (Optional) Remove the local copy and pull again:
 
 ```bash
-docker rmi job-matcher
-docker build --no-cache -t job-matcher .
+docker rmi danldevs/job-matcher:latest
+docker pull danldevs/job-matcher:latest
 ```
 
 ## Project Structure

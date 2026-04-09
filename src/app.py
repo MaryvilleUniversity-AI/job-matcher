@@ -12,8 +12,8 @@ from common_skills import common_skills
 st.set_page_config(page_title="Resume Matcher", layout="wide", initial_sidebar_state="expanded")
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SAMPLE_RESUME_PATH = PROJECT_ROOT / "data" / "sample_resumes" / "resume4.txt"
-SAMPLE_JOB_PATH = PROJECT_ROOT / "data" / "job_descriptions" / "job4.txt"
+SAMPLE_RESUME_PATH = PROJECT_ROOT / "data" / "sample_resumes" / "resume1.txt"
+SAMPLE_JOB_PATH = PROJECT_ROOT / "data" / "job_descriptions" / "job1.txt"
 
 def read_sample_text(path: Path) -> str:
     try:
