@@ -22,7 +22,7 @@ skills. Built with **Python** and **Streamlit**, it leverages natural language p
 
 ```bash
 git clone https://github.com/MaryvilleUniversity-AI/job-matcher.git
-cd resume-matcher
+cd job-matcher
 ```
 
 2. Create and activate a virtual environment (optional but recommended):
@@ -69,7 +69,7 @@ streamlit run src/app.py
 If you have Docker Desktop installed, you can run the app with one command:
 
 ```bash
-docker run --rm -p 8501:8501 danldevs/job-matcher:latest
+docker run --rm -p 8501:8501 --name job-matcher-app danldevs/job-matcher:latest
 ```
 
 Then open:
@@ -81,7 +81,7 @@ http://localhost:8501
 To stop the app:
 
 ```bash
-docker compose down
+docker stop job-matcher-app
 ```
 
 ### Docker Troubleshooting
