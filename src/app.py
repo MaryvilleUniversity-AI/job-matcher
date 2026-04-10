@@ -1,5 +1,8 @@
 import streamlit as st
+import io
 from pathlib import Path
+from docx import Document
+from pypdf import PdfReader
 from preprocess import preprocess
 from vectorize import vectorize
 from similarity import calculate_similarity
@@ -9,14 +12,37 @@ from common_skills import common_skills
 st.set_page_config(page_title="Resume Matcher", layout="wide", initial_sidebar_state="expanded")
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SAMPLE_RESUME_PATH = PROJECT_ROOT / "data" / "sample_resumes" / "resume4.txt"
-SAMPLE_JOB_PATH = PROJECT_ROOT / "data" / "job_descriptions" / "job4.txt"
+SAMPLE_RESUME_PATH = PROJECT_ROOT / "data" / "sample_resumes" / "resume1.txt"
+SAMPLE_JOB_PATH = PROJECT_ROOT / "data" / "job_descriptions" / "job1.txt"
 
 def read_sample_text(path: Path) -> str:
     try:
         return path.read_text(encoding="utf-8", errors="ignore")
     except Exception:
         return ""
+
+
+def extract_uploaded_text(uploaded_file, input_label: str) -> str:
+    filename = (uploaded_file.name or "").lower()
+    file_bytes = uploaded_file.getvalue()
+
+    try:
+        if filename.endswith(".txt"):
+            return file_bytes.decode("utf-8", errors="ignore")
+
+        if filename.endswith(".pdf"):
+            reader = PdfReader(io.BytesIO(file_bytes))
+            return "\n".join((page.extract_text() or "") for page in reader.pages)
+
+        if filename.endswith(".docx"):
+            document = Document(io.BytesIO(file_bytes))
+            return "\n".join(paragraph.text for paragraph in document.paragraphs)
+    except Exception as exc:
+        st.error(f"Could not read {input_label} file: {exc}")
+        return ""
+
+    st.error(f"Unsupported file type for {input_label}. Please upload .txt, .pdf, or .docx.")
+    return ""
 
 if "sample_resume_text" not in st.session_state:
     st.session_state.sample_resume_text = ""
@@ -48,8 +74,8 @@ st.caption("Compare a resume against a job description using text similarity + s
 # Sidebar inputs
 with st.sidebar:
     st.header("Inputs")
-    resume_file = st.file_uploader("Upload Resume (.txt)", type=["txt"])
-    job_file = st.file_uploader("Upload Job Description (.txt)", type=["txt"])
+    resume_file = st.file_uploader("Upload Resume (.txt, .pdf, .docx)", type=["txt", "pdf", "docx"])
+    job_file = st.file_uploader("Upload Job Description (.txt, .pdf, .docx)", type=["txt", "pdf", "docx"])
     show_raw = st.toggle("Show raw processed text", value=False)
 
     st.divider()
@@ -83,12 +109,12 @@ with st.sidebar:
 
 # Prefer uploaded files; fallback to selected samples
 raw_resume_text = (
-    resume_file.read().decode("utf-8", errors="ignore")
+    extract_uploaded_text(resume_file, "resume")
     if resume_file
     else st.session_state.sample_resume_text
 )
 raw_job_text = (
-    job_file.read().decode("utf-8", errors="ignore")
+    extract_uploaded_text(job_file, "job description")
     if job_file
     else st.session_state.sample_job_text
 )
