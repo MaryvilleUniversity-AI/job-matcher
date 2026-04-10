@@ -6,6 +6,10 @@ skills. Built with **Python** and **Streamlit**, it leverages natural language p
 
 ---
 
+## Live Demo
+
+Use the deployed app here: [https://smartjobmatch.streamlit.app/](https://smartjobmatch.streamlit.app/)
+
 ## Features
 
 - **File Uploads**: Upload resume and job description as `.txt`, `.pdf`, or `.docx` files.
