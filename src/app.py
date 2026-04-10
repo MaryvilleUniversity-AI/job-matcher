@@ -68,7 +68,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🎯 Resume Matcher")
+st.title("🎯 Job Matcher")
 st.caption("Compare a resume against a job description using text similarity + skill coverage.")
 
 # Sidebar inputs
